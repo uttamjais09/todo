@@ -12,7 +12,11 @@ const userSchema = new mongoose.Schema({
     password:{
         type: String ,
         required: true
-    }
+    },
+    todos: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Todo'
+    }]
 });
 const User  = mongoose.model("User",userSchema);
 export default User ;

@@ -5,11 +5,14 @@ import jwt from 'jsonwebtoken';
 // Register a new user
 export const register = async (req, res) => {
     try {
+        console.log("Received request payload:", req.body);
+
         const { fullName, email, password } = req.body;
 
         // Check if all fields are provided
         if (!fullName || !email || !password) {
-            return res.status(403).json({
+            console.log("Missing fields:", { fullName, email, password });
+            return res.status(400).json({
                 success: false,
                 message: "All fields are required"
             });
@@ -18,7 +21,8 @@ export const register = async (req, res) => {
         // Check if the email is already registered
         const user = await User.findOne({ email });
         if (user) {
-            return res.status(403).json({
+            console.log("Email already registered:", email);
+            return res.status(400).json({
                 success: false,
                 message: "This email ID is already registered"
             });
@@ -51,6 +55,7 @@ export const register = async (req, res) => {
     }
 };
 
+
 // Login a user
 export const login = async (req, res) => {
     try {
@@ -76,7 +81,7 @@ export const login = async (req, res) => {
         // Compare the provided password with the stored hashed password
         const isPasswordMatch = await bcrypt.compare(password, user.password);
         if (!isPasswordMatch) {
-            return res.status(403).json({
+            return res.status(400).json({
                 success: false,
                 message: "Invalid email or password"
             });

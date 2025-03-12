@@ -3,7 +3,7 @@ import { createTodo ,getAllTodos ,updateTodo,deleteTodo } from '../controller/to
 import isAuthenticated from '../middleware/isAuthenticated.js';
 const router = express.Router();
 
-router.route("/").post( isAuthenticated , createTodo).get(getAllTodos);
+router.route("/").post( isAuthenticated , createTodo).get(isAuthenticated ,getAllTodos);
 router.route("/:todoId").put(isAuthenticated,updateTodo).delete(isAuthenticated,deleteTodo);
 
 

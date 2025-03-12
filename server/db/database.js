@@ -13,7 +13,7 @@ try{
     
     }
     catch(error){
-        console.log('not connected');
+        console.error('not connected');
 
     }
 }

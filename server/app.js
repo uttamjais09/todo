@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://todo-1-584x.onrender.com/" ,
+    origin: "https://todo-emlk.onrender.com/" ,
     credentials: true
 })) ;
 

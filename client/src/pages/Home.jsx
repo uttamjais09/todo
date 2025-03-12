@@ -13,7 +13,7 @@ const Home = () => {
 
     const addTodoHandler = async () => {
         try {
-            const res = await axios.post('http://localhost:3000/api/v1/todo', { 
+            const res = await axios.post('https://todo-1-584x.onrender.com/api/v1/todo', { 
                 title, 
                 description 
             }, {
@@ -43,7 +43,7 @@ const Home = () => {
 
     const getAllTodo = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/api/v1/todo/', {
+            const res = await axios.get('https://todo-1-584x.onrender.com/api/v1/todo/', {
                 withCredentials: true, // Include this if your backend requires authentication
             });
             setTodos(res.data.todos); // Update state with fetched todos
@@ -66,7 +66,7 @@ const Home = () => {
 
     const updateTodoHandler = async () => {
         try {
-            const res = await axios.put(`http://localhost:3000/api/v1/todo/${editingTodo._id}`, { 
+            const res = await axios.put(`https://todo-1-584x.onrender.com/api/v1/todo/${editingTodo._id}`, { 
                 title, 
                 description 
             }, {
@@ -97,7 +97,7 @@ const Home = () => {
 
     const deleteTodoHandler = async (todoId) => {
         try {
-            const res = await axios.delete(`http://localhost:3000/api/v1/todo/${todoId}`, {
+            const res = await axios.delete(`https://todo-1-584x.onrender.com/api/v1/todo/${todoId}`, {
                 withCredentials: true,
             });
     

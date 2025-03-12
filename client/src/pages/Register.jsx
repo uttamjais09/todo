@@ -16,7 +16,7 @@ const Register = () => {
     const registerHandler = async () => {
         try {
             
-            const res = await axios.post("http://localhost:3000/api/v1/user", user, {
+            const res = await axios.post("https://todo-1-584x.onrender.com/api/v1/user", user, {
                 headers: {
                     "Content-Type": "application/json",
                 },

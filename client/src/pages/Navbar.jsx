@@ -7,7 +7,7 @@ const Navbar = ({ userName }) => {
 
     const logoutHandler = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/api/v1/user/logout', {
+            const res = await axios.get('https://todo-1-584x.onrender.com/api/v1/user/logout', {
                 withCredentials: true,
             });
 
